@@ -1,0 +1,16 @@
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+      - 3010:3010
+    stdin_open: true
+    tty: true
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+    # environment:
+    #   - NGINX_HOST=demo-react-app-prod.com
+    #   - NGINX_PORT=80
